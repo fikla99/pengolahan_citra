@@ -5,7 +5,7 @@ import cv2
 from skimage.feature import graycomatrix, graycoprops
 
 st.set_page_config(layout="wide")
-st.title("🌿 Aplikasi Pengolahan Citra Daun")
+st.title("🌿 Aplikasi Pengolahan Citra")
 
 st.sidebar.header("📂 Upload Gambar")
 uploaded_file = st.sidebar.file_uploader("Pilih file gambar (JPG/PNG)", type=["jpg", "png"])
@@ -60,4 +60,4 @@ if uploaded_file is not None:
     - **Rata-rata Warna B:** {rata_b:.2f}  
     """)
 else:
-    st.info("📤 Silakan unggah gambar daun untuk mulai.")
+    st.info("📤 Silakan unggah gambar untuk mulai.")
