@@ -10,6 +10,7 @@ st.title("🌿 Aplikasi Pengolahan Citra Daun")
 st.sidebar.header("📂 Upload Gambar")
 uploaded_file = st.sidebar.file_uploader("Pilih file gambar (JPG/PNG)", type=["jpg", "png"])
 
+
 if uploaded_file is not None:
     # Load gambar
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
@@ -41,10 +42,11 @@ if uploaded_file is not None:
     # Tampilkan gambar hasil
     st.subheader("🖼️ Hasil Pengolahan Gambar")
     col1, col2, col3, col4 = st.columns(4)
-    col1.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), caption="Asli", use_column_width=True)
-    col2.image(gray, caption="Grayscale", use_column_width=True, channels="GRAY")
-    col3.image(blur, caption="Blur", use_column_width=True, channels="GRAY")
-    col4.image(thresh, caption="Segmentasi", use_column_width=True, channels="GRAY")
+    col1.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), caption="Asli", use_container_width=True)
+    col2.image(gray, caption="Grayscale", use_container_width=True, channels="GRAY")
+    col3.image(blur, caption="Blur", use_container_width=True, channels="GRAY")
+    col4.image(thresh, caption="Segmentasi", use_container_width=True, channels="GRAY")
+    
 
     # Tampilkan fitur
     st.subheader("📊 Ekstraksi Fitur:")
